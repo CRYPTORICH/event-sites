@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valeria · Mis Quince</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0609;--surface:#110b0f;--surface-raised:#181218;
+  --text:#f5efe8;--text-muted:rgba(245,239,232,0.55);--text-dim:rgba(245,239,232,0.3);
+  --accent:#c4956a;--accent-glow:rgba(196,149,106,0.15);
+  --rose:#b8455a;--rose-glow:rgba(184,69,90,0.12);
+  --radius-sm:12px;--radius-md:20px;--radius-lg:28px;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Cormorant Garamond',Georgia,serif;
+  --font-ui:'Inter',-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth;background:var(--bg);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:var(--font-body);color:var(--text);background:var(--bg);line-height:1.6;font-size:18px;overflow-x:hidden}
+
+/* ═══════════════════════════════════════════
+   HERO — Full bleed video with refined overlay
+   ═══════════════════════════════════════════ */
+.hero{position:relative;height:100vh;height:100dvh;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:brightness(0.42) saturate(1.05)}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(
+  180deg,
+  rgba(10,6,9,0.85) 0%,
+  rgba(10,6,9,0.35) 25%,
+  rgba(10,6,9,0.08) 50%,
+  rgba(10,6,9,0.35) 75%,
+  rgba(10,6,9,0.92) 100%
+)}
+.hero-content{position:relative;z-index:2;text-align:center;padding:40px 24px 80px;width:100%;max-width:480px}
+.hero-eyebrow{font-family:var(--font-ui);font-size:0.65rem;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--rose);margin-bottom:16px;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
+.hero-date{font-family:var(--font-ui);font-size:0.75rem;font-weight:400;letter-spacing:0.2em;color:var(--text-muted);margin-bottom:24px;opacity:0;animation:fadeUp 0.8s 0.35s forwards}
+.hero-name{font-family:var(--font-display);font-size:clamp(2.8rem,8vw,4.2rem);font-weight:600;line-height:1.05;margin-bottom:8px;color:var(--text);opacity:0;animation:fadeUp 0.8s 0.5s forwards}
+.hero-subtitle{font-family:var(--font-display);font-size:clamp(1.4rem,4vw,1.8rem);font-weight:500;font-style:italic;color:var(--accent);margin-bottom:20px;opacity:0;animation:fadeUp 0.8s 0.65s forwards}
+.hero-line{width:48px;height:1px;background:var(--accent);margin:0 auto 24px;opacity:0.5;opacity:0;animation:fadeUp 0.8s 0.8s forwards}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-ui);font-size:0.8rem;font-weight:500;letter-spacing:0.05em;color:var(--text);text-decoration:none;padding:14px 32px;border:1px solid rgba(245,239,232,0.2);border-radius:100px;background:rgba(245,239,232,0.04);backdrop-filter:blur(8px);transition:all 0.3s;opacity:0;animation:fadeUp 0.8s 0.95s forwards}
+.hero-cta:hover{background:rgba(245,239,232,0.1);border-color:rgba(245,239,232,0.35);transform:translateY(-2px)}
+.hero-scroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.2em;color:var(--text-dim);animation:pulse 2.5s infinite}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:0.3}50%{opacity:0.7}}
+
+/* ═══════════════════════════════════════════
+   CONTENT SECTIONS
+   ═══════════════════════════════════════════ */
+.container{max-width:520px;margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+.section-label{font-family:var(--font-ui);font-size:0.6rem;font-weight:500;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+.section-title{font-family:var(--font-display);font-size:1.6rem;font-weight:600;color:var(--text);line-height:1.2;margin-bottom:12px}
+.section-sub{font-size:1.05rem;color:var(--text-muted);line-height:1.7;margin-bottom:40px}
+
+/* Detail Cards */
+.detail-card{background:var(--surface);border:1px solid rgba(245,239,232,0.06);border-radius:var(--radius-md);padding:28px 24px;margin-bottom:12px;transition:border-color 0.3s}
+.detail-card:hover{border-color:rgba(196,149,106,0.15)}
+.detail-icon{font-size:1.6rem;margin-bottom:10px}
+.detail-label{font-family:var(--font-ui);font-size:0.58rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px}
+.detail-value{font-size:1rem;color:var(--text);line-height:1.5}
+
+/* Gallery Grid */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:40px 0}
+.gallery-item{aspect-ratio:1;border-radius:var(--radius-sm);background:var(--surface);overflow:hidden}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.gallery-item:hover img{transform:scale(1.05)}
+
+/* Countdown */
+.countdown{display:flex;gap:12px;justify-content:center;margin:32px 0}
+.countdown-block{background:var(--surface-raised);border:1px solid rgba(245,239,232,0.06);border-radius:var(--radius-md);padding:20px 18px;text-align:center;min-width:72px}
+.countdown-num{font-family:var(--font-display);font-size:1.8rem;font-weight:600;color:var(--text);line-height:1}
+.countdown-label{font-family:var(--font-ui);font-size:0.5rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-dim);margin-top:4px}
+
+/* RSVP Form */
+.rsvp-form{background:var(--surface);border:1px solid rgba(245,239,232,0.06);border-radius:var(--radius-lg);padding:40px 28px;margin-top:40px}
+.rsvp-form h2{font-family:var(--font-display);font-size:1.4rem;font-weight:600;color:var(--text);text-align:center;margin-bottom:8px}
+.rsvp-form p{font-size:0.9rem;color:var(--text-muted);text-align:center;margin-bottom:28px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-family:var(--font-ui);font-size:0.58rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px}
+.form-input{width:100%;background:var(--bg);border:1px solid rgba(245,239,232,0.08);border-radius:var(--radius-sm);padding:15px 18px;color:var(--text);font-family:var(--font-body);font-size:1rem;outline:none;transition:border-color 0.3s}
+.form-input:focus{border-color:var(--accent)}
+.form-input::placeholder{color:rgba(245,239,232,0.2)}
+.form-select{width:100%;background:var(--bg);border:1px solid rgba(245,239,232,0.08);border-radius:var(--radius-sm);padding:15px 18px;color:var(--text);font-family:var(--font-body);font-size:1rem;outline:none;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23f5efe8' fill='none' stroke-width='1.5' opacity='0.3'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center}
+.form-submit{width:100%;background:linear-gradient(135deg,var(--accent),#d4a575);color:var(--bg);border:none;border-radius:100px;padding:17px;font-family:var(--font-ui);font-size:0.85rem;font-weight:600;letter-spacing:0.04em;cursor:pointer;transition:all 0.3s;margin-top:8px}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 12px 32px var(--accent-glow)}
+.form-note{text-align:center;font-family:var(--font-ui);font-size:0.65rem;color:var(--text-dim);margin-top:16px}
+
+/* Testimonial */
+.testimonial{text-align:center;padding:40px 24px;margin:40px 0;border-top:1px solid rgba(245,239,232,0.04);border-bottom:1px solid rgba(245,239,232,0.04)}
+.testimonial-quote{font-family:var(--font-display);font-size:1.1rem;font-style:italic;color:var(--text);line-height:1.7;max-width:420px;margin:0 auto 16px}
+.testimonial-author{font-family:var(--font-ui);font-size:0.7rem;font-weight:500;color:var(--accent);letter-spacing:0.05em}
+
+/* Footer */
+.footer{text-align:center;padding:40px 24px;font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.15em;color:var(--text-dim)}
+.footer a{color:var(--accent);text-decoration:none}
+
+/* Scroll animations */
+.fade-in{opacity:0;transform:translateY(24px);transition:all 0.7s ease-out}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <source src="hero-quince-v3.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Mis Quince Años</p>
+    <p class="hero-date">5 de Julio, 2026 · 4:00 PM</p>
+    <h1 class="hero-name">Valeria</h1>
+    <p class="hero-subtitle">El sueño de toda niña</p>
+    <div class="hero-line"></div>
+    <a href="#rsvp" class="hero-cta">Confirmar Asistencia ↓</a>
+  </div>
+  <div class="hero-scroll">DESLIZA</div>
+</section>
+
+<div class="container">
+
+<!-- ═══════════════ COUNTDOWN ═══════════════ -->
+<div class="section" style="padding-bottom:40px">
+  <div class="section-label" style="text-align:center">Comienza en</div>
+  <div class="countdown">
+    <div class="countdown-block"><div class="countdown-num">33</div><div class="countdown-label">Días</div></div>
+    <div class="countdown-block"><div class="countdown-num">18</div><div class="countdown-label">Horas</div></div>
+    <div class="countdown-block"><div class="countdown-num">42</div><div class="countdown-label">Min</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════ DETAILS ═══════════════ -->
+<div class="section" style="padding-top:20px">
+  <div class="section-label">Los Detalles</div>
+  
+  <div class="detail-card fade-in">
+    <div class="detail-icon">📍</div>
+    <div class="detail-label">Lugar</div>
+    <div class="detail-value">Salón Las Rosas<br>8600 NW 36th St · Doral, FL 33166</div>
+  </div>
+  
+  <div class="detail-card fade-in">
+    <div class="detail-icon">🕐</div>
+    <div class="detail-label">Horario</div>
+    <div class="detail-value">Recepción: 4:00 PM<br>Vals con papá: 5:30 PM<br>Cena: 6:30 PM · Baile hasta medianoche</div>
+  </div>
+  
+  <div class="detail-card fade-in">
+    <div class="detail-icon">👗</div>
+    <div class="detail-label">Código de Vestir</div>
+    <div class="detail-value">Formal · Tonos burgundy y oro</div>
+  </div>
+  
+  <div class="detail-card fade-in">
+    <div class="detail-icon">🎁</div>
+    <div class="detail-label">Regalos</div>
+    <div class="detail-value">Tu presencia es el mejor regalo.<br>Si deseas obsequiar algo, sobre de lluvia de sobres.</div>
+  </div>
+</div>
+
+<!-- ═══════════════ RSVP ═══════════════ -->
+<div id="rsvp" class="rsvp-form fade-in">
+  <h2>Confirma tu Asistencia</h2>
+  <p>Por favor confirma antes del 20 de Junio</p>
+  
+  <div class="form-group">
+    <label>Nombre Completo</label>
+    <input class="form-input" type="text" placeholder="Ej. María García">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input class="form-input" type="email" placeholder="maria@email.com">
+  </div>
+  <div class="form-group">
+    <label>¿Vas a asistir?</label>
+    <select class="form-select">
+      <option>✨ Sí, con mucho gusto</option>
+      <option>😔 No puedo asistir</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Invitados adicionales</label>
+    <select class="form-select">
+      <option>Solo yo</option>
+      <option>+1 acompañante</option>
+      <option>+2 acompañantes</option>
+    </select>
+  </div>
+  <button class="form-submit">Confirmar →</button>
+  <p class="form-note">Te enviaremos un recordatorio 3 días antes</p>
+</div>
+
+<!-- ═══════════════ TESTIMONIAL ═══════════════ -->
+<div class="testimonial fade-in">
+  <p class="testimonial-quote">"No puedo creer lo fácil que fue. Mandé un link y en 3 días ya tenía 18 confirmados. Mis tías en Cuba lo abrieron sin problemas."</p>
+  <p class="testimonial-author">— Mamá de Valeria, Doral</p>
+</div>
+
+<div class="footer">
+  <p>Valeria · Mis Quince · Julio 2026</p>
+  <p style="margin-top:6px">Sitio por <a href="mailto:dejesusrichard89@gmail.com">EventSites</a></p>
+</div>
+
+</div>
+
+<script>
+// Force video play
+(function(){var v=document.querySelector('.hero-video');if(v){v.play().catch(function(){v.muted=true;v.play()});}})();
+
+// Scroll animations
+(function(){
+  var els=document.querySelectorAll('.fade-in');
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
+  },{threshold:0.15});
+  els.forEach(function(el){observer.observe(el)});
+})();
+</script>
+</body>
+</html>
