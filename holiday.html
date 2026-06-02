@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NYE 2027 — The Midnight Affair</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#d4a840;--silver:#b8c0d0;--midnight:#0a0c18;
+  --dark:#060810;--deep:#030408;--card:#0a0c18;
+  --text:#e8e6f0;--muted:rgba(232,230,240,0.5);
+  --border:rgba(212,168,64,0.08);
+}
+html{scroll-behavior:smooth;background:var(--deep)}
+body{font-family:'Crimson Pro',Georgia,serif;color:var(--text);background:var(--deep);-webkit-font-smoothing:antialiased;line-height:1.55}
+.wrap{max-width:620px;margin:0 auto;padding:0 16px}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;-webkit-media-controls:none!important;pointer-events:none;filter:brightness(0.35) saturate(1.1)}
+.hero::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(3,4,8,0.7) 0%,rgba(3,4,8,0.08) 30%,rgba(212,168,64,0.04) 60%,rgba(3,4,8,0.96) 100%)}
+.hero-content{position:relative;z-index:3;text-align:center;padding:60px 20px 80px}
+
+.hero-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:0.5rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);background:rgba(212,168,64,0.1);border:1px solid rgba(212,168,64,0.18);border-radius:20px;padding:6px 18px;margin-bottom:20px}
+.hero-title{font-family:'Fraunces',Georgia,serif;font-size:clamp(2rem,5.5vw,2.6rem);font-weight:700;line-height:1.1;margin-bottom:10px}
+.hero-title span{background:linear-gradient(135deg,#d4a840,#f5e080,#b8c0d0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-date{font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--gold);letter-spacing:0.1em;margin:16px 0;font-weight:600}
+.hero-sub{font-size:0.9rem;color:var(--muted);line-height:1.65;max-width:420px;margin:0 auto 28px}
+
+.sec{padding:48px 0 16px}
+.sec-title{font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:var(--gold);margin-bottom:14px}
+.detail-row{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);align-items:center}
+.detail-icon{font-size:1.4rem;min-width:30px}
+.detail-label{font-family:'DM Sans',sans-serif;font-size:0.52rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:3px}
+.detail-value{font-size:0.88rem;color:var(--text)}
+
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+.perk{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 16px;text-align:center}
+.perk-icon{font-size:1.8rem;margin-bottom:8px}
+.perk h4{font-family:'DM Sans',sans-serif;font-size:0.65rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px}
+.perk p{font-size:0.72rem;color:var(--muted)}
+
+.countdown{text-align:center;margin:32px 0;padding:24px;background:var(--card);border:1px solid rgba(212,168,64,0.12);border-radius:16px}
+.countdown h3{font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:var(--gold);margin-bottom:6px}
+.countdown .timer{font-size:1.5rem;font-family:'DM Sans',sans-serif;color:var(--silver);font-weight:600}
+
+.rsvp-section{padding:24px 0 40px}
+.rsvp-section h2{font-family:'Fraunces',Georgia,serif;font-size:1.4rem;color:var(--gold);text-align:center;margin-bottom:20px}
+.form{display:flex;flex-direction:column;gap:14px}
+.form input{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--text);font-family:'Crimson Pro',serif;font-size:0.9rem;outline:none}
+.form input:focus{border-color:rgba(212,168,64,0.3)}
+.form button{background:linear-gradient(135deg,var(--midnight),var(--gold));color:#fff;border:none;border-radius:14px;padding:16px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;letter-spacing:0.04em}
+.form button:hover{transform:translateY(-2px)}
+
+.foot{text-align:center;padding:32px 0 20px;font-family:'DM Sans',sans-serif;font-size:0.42rem;text-transform:uppercase;letter-spacing:0.2em;color:rgba(232,230,240,0.08)}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="hero-holiday.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <div class="hero-badge">✨ NEW YEAR'S EVE</div>
+    <h1 class="hero-title">The Midnight <span>Affair</span></h1>
+    <p class="hero-date">DECEMBER 31, 2026 · 9:00 PM</p>
+    <p class="hero-sub">An exclusive NYE gala at the W South Beach. Champagne tower. Live band. Rooftop fireworks at midnight. 200 guests. This is the party everyone will talk about in 2027.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+<div class="countdown">
+  <h3>🎆 Countdown to Midnight</h3>
+  <div class="timer">December 31, 2026</div>
+  <p style="font-size:0.7rem;color:var(--muted);margin-top:8px">Doors open 9 PM · Champagne toast at 11:55 PM</p>
+</div>
+
+<div class="sec">
+  <div class="sec-title">📍 The Details</div>
+  <div class="detail-row"><div class="detail-icon">📅</div><div><div class="detail-label">Date & Time</div><div class="detail-value">Wednesday, December 31 · 9:00 PM – 2:00 AM</div></div></div>
+  <div class="detail-row"><div class="detail-icon">📍</div><div><div class="detail-label">Venue</div><div class="detail-value">W South Beach · 2201 Collins Ave, Miami Beach</div></div></div>
+  <div class="detail-row"><div class="detail-icon">🎵</div><div><div class="detail-label">Entertainment</div><div class="detail-value">Live 8-piece band · DJ set after midnight · Rooftop fireworks</div></div></div>
+  <div class="detail-row"><div class="detail-icon">👔</div><div><div class="detail-label">Dress Code</div><div class="detail-value">Black tie. Tuxedos and gowns. This is the one night to go all out.</div></div></div>
+</div>
+
+<div class="perks">
+  <div class="perk"><div class="perk-icon">🍾</div><h4>Premium Open Bar</h4><p>Top-shelf all night</p></div>
+  <div class="perk"><div class="perk-icon">🥂</div><h4>Champagne Tower</h4><p>Midnight pour for all</p></div>
+  <div class="perk"><div class="perk-icon">🎆</div><h4>Fireworks View</h4><p>Rooftop access at 12</p></div>
+  <div class="perk"><div class="perk-icon">📸</div><h4>Photo Booth</h4><p>Professional + props</p></div>
+</div>
+
+<div class="rsvp-section">
+  <h2>Request Invitation</h2>
+  <p style="text-align:center;font-size:0.8rem;color:var(--muted);margin-bottom:20px">Space is limited to 200. Request below — confirmation sent within 48 hours.</p>
+  <div class="form">
+    <input type="text" placeholder="Full Name">
+    <input type="email" placeholder="Email">
+    <input type="number" placeholder="Guests (max 2)">
+    <input type="text" placeholder="Special requests / dietary needs">
+    <button>Request Invitation →</button>
+  </div>
+</div>
+
+<div class="foot"><p>The Midnight Affair · W South Beach · 12.31.2026</p></div>
+</div>
+
+<script>(function(){var v=document.querySelector('video');if(v){v.play().catch(function(){v.muted=true;v.play()})}})();</script>
+</body>
+</html>

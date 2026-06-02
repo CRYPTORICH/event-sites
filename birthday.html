@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liam's 30th — Birthday Party</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#f0a030;--champagne:#f5c860;--accent:#e85d2c;
+  --dark:#0a0608;--deep:#050303;--card:#100a0a;
+  --text:#f5eee0;--muted:rgba(245,238,224,0.55);
+  --border:rgba(240,160,48,0.08);
+}
+html{scroll-behavior:smooth;background:var(--deep)}
+body{font-family:'Crimson Pro',Georgia,serif;color:var(--text);background:var(--deep);-webkit-font-smoothing:antialiased;line-height:1.55}
+.wrap{max-width:620px;margin:0 auto;padding:0 16px}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;-webkit-media-controls:none!important;pointer-events:none;filter:brightness(0.45) saturate(1.15)}
+.hero::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(5,3,3,0.6) 0%,rgba(5,3,3,0.15) 40%,rgba(240,160,48,0.06) 70%,rgba(5,3,3,0.92) 100%)}
+.hero-content{position:relative;z-index:3;text-align:center;padding:60px 20px 80px}
+
+.hero-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:0.55rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);background:rgba(232,93,44,0.1);border:1px solid rgba(232,93,44,0.2);border-radius:20px;padding:7px 20px;margin-bottom:24px}
+.hero-name{font-family:'Tangerine',cursive;font-size:clamp(3rem,8vw,5rem);color:var(--gold);line-height:1;margin-bottom:8px}
+.hero-title{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.5rem,4vw,2rem);font-weight:700;line-height:1.15;margin-bottom:16px}
+.hero-date{font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--muted);letter-spacing:0.08em;margin-bottom:16px}
+.hero-sub{font-size:clamp(0.9rem,2vw,1.05rem);color:var(--muted);line-height:1.7;max-width:420px;margin:0 auto 32px}
+
+/* SECTIONS */
+.sec{padding:48px 0 16px}
+.sec-title{font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:var(--champagne);margin-bottom:12px}
+.detail-row{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);align-items:center}
+.detail-icon{font-size:1.5rem;min-width:32px}
+.detail-label{font-family:'DM Sans',sans-serif;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:3px}
+.detail-value{font-size:0.9rem;color:var(--text)}
+
+/* DRESS CODE */
+.dresscode{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:24px 0;text-align:center}
+.dresscode h3{font-family:'Fraunces',Georgia,serif;font-size:1rem;color:var(--gold);margin-bottom:6px}
+.dresscode p{font-size:0.85rem;color:var(--muted)}
+
+/* RSVP */
+.rsvp-section{padding:24px 0 40px}
+.rsvp-section h2{font-family:'Fraunces',Georgia,serif;font-size:1.4rem;color:var(--champagne);text-align:center;margin-bottom:20px}
+.form{display:flex;flex-direction:column;gap:14px}
+.form input,.form select{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--text);font-family:'Crimson Pro',serif;font-size:0.9rem;outline:none;transition:border-color 0.3s}
+.form input:focus,.form select:focus{border-color:rgba(240,160,48,0.3)}
+.form button{background:linear-gradient(135deg,var(--gold),var(--accent));color:#fff;border:none;border-radius:14px;padding:16px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;letter-spacing:0.04em;transition:all 0.3s}
+.form button:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(240,160,48,0.25)}
+
+/* FOOTER */
+.foot{text-align:center;padding:32px 0 20px;font-family:'DM Sans',sans-serif;font-size:0.45rem;text-transform:uppercase;letter-spacing:0.2em;color:rgba(245,238,224,0.1)}
+.gift-hint{text-align:center;font-size:0.75rem;color:var(--muted);margin-top:16px;font-style:italic}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="hero-birthday.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <div class="hero-badge">🎂 30TH BIRTHDAY</div>
+    <div class="hero-name">Liam</div>
+    <h1 class="hero-title">Three Decades.<br>One Epic Night.</h1>
+    <p class="hero-date">AUGUST 19, 2026 · 7:00 PM</p>
+    <p class="hero-sub">Open bar. Live DJ. Food trucks. 80 guests. No gifts — just your presence. Dress to impress.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+<div class="sec">
+  <div class="sec-title">📍 The Details</div>
+  <div class="detail-row"><div class="detail-icon">📅</div><div><div class="detail-label">Date & Time</div><div class="detail-value">Saturday, August 19 · 7:00 PM – Midnight</div></div></div>
+  <div class="detail-row"><div class="detail-icon">📍</div><div><div class="detail-label">Venue</div><div class="detail-value">The Rooftop at East Hotel · 788 Brickell Plaza, Miami</div></div></div>
+  <div class="detail-row"><div class="detail-icon">🎵</div><div><div class="detail-label">Entertainment</div><div class="detail-value">DJ Santi + Live Saxophonist</div></div></div>
+  <div class="detail-row"><div class="detail-icon">🍸</div><div><div class="detail-label">Food & Drinks</div><div class="detail-value">Premium open bar · Taco stand · Sushi bar · Dessert table</div></div></div>
+</div>
+
+<div class="dresscode">
+  <h3>👔 Dress Code</h3>
+  <p>Cocktail attire. Think Miami chic — no flip flops, no gym wear. Bring your best energy.</p>
+</div>
+
+<div class="sec">
+  <div class="sec-title">🎁 Gift Policy</div>
+  <p style="font-size:0.9rem;color:var(--muted);line-height:1.6">Your presence is the only present we need. Seriously — no gifts. If you absolutely must, Venmo is in the confirmation email. But showing up is enough.</p>
+</div>
+
+<div class="rsvp-section">
+  <h2>RSVP</h2>
+  <div class="form">
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Email">
+    <select><option>🎉 Yes, I'll be there!</option><option>😔 Can't make it</option></select>
+    <select><option>Just me</option><option>Bringing a +1</option><option>Bringing +2</option></select>
+    <button>Confirm Attendance →</button>
+  </div>
+  <p class="gift-hint">RSVP by August 1st — space is limited</p>
+</div>
+
+<div class="foot"><p>Liam's 30th · Miami · 08.19.2026</p></div>
+</div>
+
+<script>(function(){var v=document.querySelector('video');if(v){v.play().catch(function(){v.muted=true;v.play()})}})();</script>
+</body>
+</html>

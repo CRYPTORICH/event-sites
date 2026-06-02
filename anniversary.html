@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elena & Carlos — 25th Anniversary</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c9a050;--rose:#d4856a;--cream:#f5eed8;
+  --dark:#080706;--deep:#040302;--card:#0e0b08;
+  --text:#ede4d4;--muted:rgba(237,228,212,0.5);
+  --border:rgba(201,160,80,0.08);
+}
+html{scroll-behavior:smooth;background:var(--deep)}
+body{font-family:'Crimson Pro',Georgia,serif;color:var(--text);background:var(--deep);-webkit-font-smoothing:antialiased;line-height:1.55}
+.wrap{max-width:620px;margin:0 auto;padding:0 16px}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;-webkit-media-controls:none!important;pointer-events:none;filter:brightness(0.38) saturate(1.05)}
+.hero::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(4,3,2,0.65) 0%,rgba(4,3,2,0.1) 35%,rgba(201,160,80,0.06) 65%,rgba(4,3,2,0.95) 100%)}
+.hero-content{position:relative;z-index:3;text-align:center;padding:60px 20px 80px}
+
+.hero-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:0.5rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);background:rgba(201,160,80,0.1);border:1px solid rgba(201,160,80,0.18);border-radius:20px;padding:6px 18px;margin-bottom:16px}
+.hero-names{font-family:'Tangerine',cursive;font-size:clamp(2.5rem,7vw,4rem);color:var(--gold);line-height:1;margin-bottom:4px}
+.hero-years{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.3rem,3.5vw,1.7rem);font-weight:600;color:var(--cream);margin-bottom:12px}
+.hero-date{font-family:'DM Sans',sans-serif;font-size:0.8rem;color:var(--muted);letter-spacing:0.1em;margin:14px 0}
+.hero-sub{font-size:0.9rem;color:var(--muted);line-height:1.65;max-width:400px;margin:0 auto 24px}
+
+.sec{padding:48px 0 16px}
+.sec-title{font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:var(--gold);margin-bottom:14px}
+.detail-row{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);align-items:center}
+.detail-icon{font-size:1.4rem;min-width:30px}
+.detail-label{font-family:'DM Sans',sans-serif;font-size:0.52rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:3px}
+.detail-value{font-size:0.88rem;color:var(--text)}
+
+.story{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 22px;margin:24px 0}
+.story h3{font-family:'Fraunces',Georgia,serif;font-size:1rem;color:var(--gold);margin-bottom:10px;text-align:center}
+.story p{font-size:0.82rem;color:var(--muted);line-height:1.7;text-align:center;font-style:italic}
+
+.rsvp-section{padding:24px 0 40px}
+.rsvp-section h2{font-family:'Fraunces',Georgia,serif;font-size:1.4rem;color:var(--gold);text-align:center;margin-bottom:20px}
+.form{display:flex;flex-direction:column;gap:14px}
+.form input,.form select{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--text);font-family:'Crimson Pro',serif;font-size:0.9rem;outline:none}
+.form input:focus,.form select:focus{border-color:rgba(201,160,80,0.3)}
+.form button{background:linear-gradient(135deg,var(--gold),var(--rose));color:#fff;border:none;border-radius:14px;padding:16px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;letter-spacing:0.04em}
+.form button:hover{transform:translateY(-2px)}
+
+.foot{text-align:center;padding:32px 0 20px;font-family:'DM Sans',sans-serif;font-size:0.42rem;text-transform:uppercase;letter-spacing:0.2em;color:rgba(237,228,212,0.08)}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="hero-anniversary.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <div class="hero-badge">💍 25TH ANNIVERSARY</div>
+    <div class="hero-names">Elena & Carlos</div>
+    <div class="hero-years">Twenty-Five Years.</div>
+    <p class="hero-date">OCTOBER 15, 2026 · 6:00 PM</p>
+    <p class="hero-sub">From a tiny apartment in Hialeah to 25 years of love. Join us for dinner, dancing, and a slideshow of moments we'll never forget. Black tie optional — love required.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+<div class="sec">
+  <div class="sec-title">📍 The Details</div>
+  <div class="detail-row"><div class="detail-icon">📅</div><div><div class="detail-label">Date & Time</div><div class="detail-value">Saturday, October 15 · 6:00 PM – 11:00 PM</div></div></div>
+  <div class="detail-row"><div class="detail-icon">📍</div><div><div class="detail-label">Venue</div><div class="detail-value">Casa Tua Cucina · 70 SW 7th St, Brickell, Miami</div></div></div>
+  <div class="detail-row"><div class="detail-icon">🍽️</div><div><div class="detail-label">Dinner</div><div class="detail-value">5-course Italian tasting menu · Wine pairing</div></div></div>
+  <div class="detail-row"><div class="detail-icon">🎵</div><div><div class="detail-label">Music</div><div class="detail-value">Live piano + DJ set after dinner</div></div></div>
+</div>
+
+<div class="story">
+  <h3>💌 Our Story</h3>
+  <p>"We met at a quinceañera in 2001. He asked me to dance. I said no. He asked again. I said yes. Twenty-five years later, I'd still say yes." — Elena</p>
+</div>
+
+<div class="rsvp-section">
+  <h2>RSVP</h2>
+  <div class="form">
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Email">
+    <select><option>🥂 Accept with pleasure</option><option>😔 Regretfully decline</option></select>
+    <select><option>Just me</option><option>With my +1</option></select>
+    <select><option>No dietary restrictions</option><option>Vegetarian</option><option>Gluten-free</option><option>Other (note below)</option></select>
+    <button>RSVP →</button>
+  </div>
+</div>
+
+<div class="foot"><p>Elena & Carlos · 25 Years · 10.15.2026</p></div>
+</div>
+
+<script>(function(){var v=document.querySelector('video');if(v){v.play().catch(function(){v.muted=true;v.play()})}})();</script>
+</body>
+</html>

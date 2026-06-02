@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class of 2026 — Graduation Party</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c9a84c;--navy:#1a2a4a;--white:#f0ece0;
+  --dark:#06080c;--deep:#030406;--card:#0a0c14;
+  --text:#e8e6dc;--muted:rgba(232,230,220,0.5);
+  --border:rgba(201,168,76,0.08);
+}
+html{scroll-behavior:smooth;background:var(--deep)}
+body{font-family:'Crimson Pro',Georgia,serif;color:var(--text);background:var(--deep);-webkit-font-smoothing:antialiased;line-height:1.55}
+.wrap{max-width:620px;margin:0 auto;padding:0 16px}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;-webkit-media-controls:none!important;pointer-events:none;filter:brightness(0.35) saturate(0.9)}
+.hero::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(3,4,6,0.7) 0%,rgba(3,4,6,0.1) 30%,rgba(201,168,76,0.05) 65%,rgba(3,4,6,0.95) 100%)}
+.hero-content{position:relative;z-index:3;text-align:center;padding:60px 20px 80px}
+
+.hero-badge{display:inline-block;font-family:'DM Sans',sans-serif;font-size:0.5rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.18);border-radius:20px;padding:6px 18px;margin-bottom:20px}
+.hero-title{font-family:'Fraunces',Georgia,serif;font-size:clamp(1.8rem,5vw,2.4rem);font-weight:700;line-height:1.1;margin-bottom:12px}
+.hero-title span{background:linear-gradient(135deg,#c9a84c,#f0d878);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-date{font-family:'DM Sans',sans-serif;font-size:0.85rem;color:var(--muted);letter-spacing:0.08em;margin:16px 0}
+.hero-sub{font-size:0.92rem;color:var(--muted);line-height:1.65;max-width:420px;margin:0 auto 28px}
+
+.sec{padding:48px 0 16px}
+.sec-title{font-family:'Fraunces',Georgia,serif;font-size:1.3rem;color:var(--gold);margin-bottom:14px}
+.detail-row{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);align-items:center}
+.detail-icon{font-size:1.4rem;min-width:30px}
+.detail-label{font-family:'DM Sans',sans-serif;font-size:0.52rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin-bottom:3px}
+.detail-value{font-size:0.88rem;color:var(--text)}
+
+.highlight{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px;margin:24px 0}
+.highlight h3{font-family:'Fraunces',Georgia,serif;font-size:1rem;color:var(--gold);margin-bottom:8px}
+.highlight p{font-size:0.85rem;color:var(--muted);line-height:1.55}
+
+.rsvp-section{padding:24px 0 40px}
+.rsvp-section h2{font-family:'Fraunces',Georgia,serif;font-size:1.4rem;color:var(--gold);text-align:center;margin-bottom:20px}
+.form{display:flex;flex-direction:column;gap:14px}
+.form input{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--text);font-family:'Crimson Pro',serif;font-size:0.9rem;outline:none}
+.form input:focus{border-color:rgba(201,168,76,0.3)}
+.form button{background:linear-gradient(135deg,var(--navy),var(--gold));color:#fff;border:none;border-radius:14px;padding:16px;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;cursor:pointer;letter-spacing:0.04em}
+.form button:hover{transform:translateY(-2px)}
+
+.foot{text-align:center;padding:32px 0 20px;font-family:'DM Sans',sans-serif;font-size:0.42rem;text-transform:uppercase;letter-spacing:0.2em;color:rgba(232,230,220,0.08)}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="hero-graduation.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <div class="hero-badge">🎓 CLASS OF 2026</div>
+    <h1 class="hero-title">She <span>Did That.</span></h1>
+    <p class="hero-date">MAY 28, 2026 · 5:00 PM</p>
+    <p class="hero-sub">Jasmine graduates from FIU with a B.S. in Psychology. Come celebrate with family, food, and a slideshow that'll make everyone cry.</p>
+  </div>
+</section>
+
+<div class="wrap">
+
+<div class="sec">
+  <div class="sec-title">📍 The Details</div>
+  <div class="detail-row"><div class="detail-icon">📅</div><div><div class="detail-label">Date & Time</div><div class="detail-value">Saturday, May 28 · 5:00 PM – 10:00 PM</div></div></div>
+  <div class="detail-row"><div class="detail-icon">📍</div><div><div class="detail-label">Venue</div><div class="detail-value">La Carreta Restaurant · 8650 Bird Rd, Miami</div></div></div>
+  <div class="detail-row"><div class="detail-icon">🎓</div><div><div class="detail-label">School</div><div class="detail-value">Florida International University · B.S. Psychology</div></div></div>
+  <div class="detail-row"><div class="detail-icon">🍽️</div><div><div class="detail-label">Dinner</div><div class="detail-value">Cuban buffet + cake + open bar (beer/wine)</div></div></div>
+</div>
+
+<div class="highlight">
+  <h3>📸 Want your photo in the slideshow?</h3>
+  <p>Email 2-3 photos with Jasmine to gradparty@email.com by May 20th. We're making a 5-minute reel — the more embarrassing, the better.</p>
+</div>
+
+<div class="rsvp-section">
+  <h2>RSVP</h2>
+  <div class="form">
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Email">
+    <input type="number" placeholder="Number attending">
+    <input type="text" placeholder="Relationship to graduate (family, friend, coworker)">
+    <button>Count Me In →</button>
+  </div>
+</div>
+
+<div class="foot"><p>Jasmine's Graduation · FIU Class of 2026 · 05.28.2026</p></div>
+</div>
+
+<script>(function(){var v=document.querySelector('video');if(v){v.play().catch(function(){v.muted=true;v.play()})}})();</script>
+</body>
+</html>
