@@ -24,7 +24,9 @@ body{
   display:flex;align-items:center;justify-content:center;overflow:hidden;
 }
 .hero video{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;
+  .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;-webkit-media-controls:none!important;pointer-events:none}
+  -webkit-media-controls: none !important;
+  pointer-events: none;
   filter:brightness(0.45) saturate(0.6);
 }
 .hero::after{
@@ -134,7 +136,7 @@ body{
 <body>
 
 <section class="hero">
-  <video autoplay muted loop playsinline preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3Crect fill='%23060608' width='9' height='16'/%3E%3C/svg%3E">
+  preload="auto">
     <source src="hero-corp-crystal.mp4" type="video/mp4">
   </video>
   <div class="hero-content">
@@ -214,6 +216,9 @@ body{
     D.getElementById('f').style.display='none';D.getElementById('ok').style.display='block';
   });
 })();
+</script>
+<script>
+(function(){var v=document.querySelector('video');if(v){v.play().catch(function(){v.muted=true;v.play()})}})();
 </script>
 </body>
 </html>
