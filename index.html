@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Sites That Actually Impress — Custom Invitations & RSVP Tracking</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c4a04a;--champagne:#dcc898;--emerald:#00a86b;
+  --dark:#080a07;--deep:#040503;--card:#0d100c;
+  --text:#eceadd;--muted:rgba(236,234,221,0.5);
+  --border:rgba(196,160,74,0.08);
+}
+html{scroll-behavior:smooth;background:var(--deep)}
+body{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  color:var(--text);background:var(--deep);
+  -webkit-font-smoothing:antialiased;line-height:1.55;
+}
+.wrap{max-width:620px;margin:0 auto;padding:0 16px}
+
+/* ═══ VIDEO HERO ═══ */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.hero video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;
+  filter:brightness(0.4) saturate(1.1);
+}
+.hero::after{
+  content:'';position:absolute;inset:0;z-index:2;
+  background:linear-gradient(180deg,
+    rgba(4,5,3,0.55) 0%,
+    rgba(4,5,3,0.15) 35%,
+    rgba(196,160,74,0.08) 65%,
+    rgba(4,5,3,0.9) 100%
+  );
+}
+.hero-content{position:relative;z-index:3;text-align:center;padding:60px 20px 80px}
+
+.hero-badge{
+  display:inline-block;font-family:'Montserrat',sans-serif;
+  font-size:0.55rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--emerald);background:rgba(0,168,107,0.08);
+  border:1px solid rgba(0,168,107,0.15);
+  border-radius:20px;padding:7px 20px;margin-bottom:24px;
+}
+
+.hero-title{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2rem,6vw,3rem);font-weight:700;line-height:1.12;
+  letter-spacing:-0.01em;margin-bottom:16px;
+}
+.hero-title span{
+  background:linear-gradient(135deg,#c4a04a,#e8d494);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.hero-sub{
+  font-size:clamp(0.95rem,2.2vw,1.1rem);
+  color:var(--muted);line-height:1.7;max-width:460px;
+  margin:0 auto 32px;
+}
+.hero-sub strong{color:var(--champagne);font-weight:500}
+
+.hero-stats{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+}
+.hs{
+  background:rgba(4,5,3,0.5);backdrop-filter:blur(10px);
+  border:1px solid rgba(196,160,74,0.1);
+  border-radius:12px;padding:14px 20px;text-align:center;min-width:70px;
+}
+.hs-num{font-size:1.3rem;font-weight:700;color:var(--champagne)}
+.hs-label{font-family:'Montserrat',sans-serif;font-size:0.48rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-top:4px}
+
+.scroll-hint{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:4;
+  font-size:0.7rem;color:rgba(236,234,221,0.25);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:0.25}50%{opacity:0.6}}
+
+/* ═══ SECTIONS ═══ */
+.sec{padding:56px 0 16px}
+.sec-label{
+  font-family:'Montserrat',sans-serif;font-size:0.5rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.25em;
+  color:rgba(0,168,107,0.45);margin-bottom:14px;text-align:center;
+}
+
+/* ═══ CARDS ═══ */
+.card{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:20px;padding:28px 22px;margin-bottom:14px;
+  transition:border-color 0.3s;
+  position:relative;overflow:hidden;
+}
+.card:hover{border-color:rgba(196,160,74,0.2)}
+.card-featured{border-color:rgba(0,168,107,0.18)}
+.card-featured::before{
+  content:'★ MOST POPULAR';position:absolute;top:14px;right:14px;
+  font-family:'Montserrat',sans-serif;font-size:0.42rem;font-weight:600;
+  letter-spacing:0.12em;color:var(--emerald);
+  background:rgba(0,168,107,0.1);padding:3px 10px;border-radius:8px;
+}
+.card-icon{font-size:2.2rem;margin-bottom:6px}
+.card-title{font-size:1.15rem;font-weight:600;color:var(--champagne);margin-bottom:4px}
+.card-desc{font-size:0.78rem;color:var(--muted);line-height:1.55;margin-bottom:12px}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.tag{
+  font-family:'Montserrat',sans-serif;font-size:0.5rem;font-weight:500;
+  padding:4px 10px;background:rgba(196,160,74,0.05);
+  border:1px solid rgba(196,160,74,0.07);
+  border-radius:14px;color:rgba(236,234,221,0.4);
+}
+.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.card-price{font-size:0.95rem;font-weight:700;color:var(--champagne);white-space:nowrap}
+.card-price span{font-size:0.55rem;font-weight:400;color:var(--muted)}
+
+.btn{
+  display:inline-block;font-family:'Montserrat',sans-serif;
+  font-size:0.62rem;font-weight:600;text-decoration:none;
+  padding:10px 20px;border-radius:10px;white-space:nowrap;
+  letter-spacing:0.04em;transition:all 0.3s;
+}
+.btn-gold{
+  background:rgba(196,160,74,0.12);
+  border:1px solid rgba(196,160,74,0.25);
+  color:var(--champagne);
+}
+.btn-gold:hover{background:rgba(196,160,74,0.22)}
+.btn-green{
+  background:rgba(0,168,107,0.15);
+  border:1px solid rgba(0,168,107,0.3);
+  color:var(--emerald);
+}
+.btn-green:hover{background:rgba(0,168,107,0.25)}
+
+/* ═══ TESTIMONIAL ═══ */
+.testimonial{
+  background:linear-gradient(135deg,rgba(196,160,74,0.04),rgba(0,168,107,0.03));
+  border:1px solid var(--border);
+  border-radius:18px;padding:28px 24px;margin:36px 0;text-align:center;
+}
+.testimonial-quote{
+  font-size:0.88rem;font-style:italic;color:var(--text);line-height:1.6;
+  margin-bottom:10px;
+}
+.testimonial-author{font-family:'Montserrat',sans-serif;font-size:0.65rem;color:var(--champagne);font-weight:600}
+.testimonial-role{font-family:'Montserrat',sans-serif;font-size:0.5rem;color:var(--muted);margin-top:2px}
+
+/* ═══ HOW IT WORKS ═══ */
+.steps{margin:32px 0}
+.step{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:16px 0;border-bottom:1px solid var(--border);
+}
+.step:last-child{border:none}
+.step-num{
+  width:36px;height:36px;min-width:36px;
+  background:rgba(196,160,74,0.08);border:1px solid rgba(196,160,74,0.15);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-size:0.7rem;font-weight:700;color:var(--champagne);
+}
+.step-title{font-size:0.85rem;font-weight:600;color:var(--text);margin-bottom:3px}
+.step-desc{font-size:0.7rem;color:var(--muted);line-height:1.5}
+
+/* ═══ GUARANTEE ═══ */
+.guarantee{
+  background:rgba(0,168,107,0.04);
+  border:1px solid rgba(0,168,107,0.1);
+  border-radius:18px;padding:28px 20px;text-align:center;margin:32px 0;
+}
+.guarantee-icon{font-size:2.2rem;margin-bottom:8px}
+.guarantee h3{font-family:'Playfair Display',Georgia,serif;font-size:1rem;color:var(--emerald);margin-bottom:6px}
+.guarantee p{font-size:0.78rem;color:var(--muted);line-height:1.55}
+
+/* ═══ CTA ═══ */
+.cta-section{text-align:center;padding:16px 0 40px}
+.cta-btn{
+  display:inline-block;font-family:'Montserrat',sans-serif;
+  font-size:0.85rem;font-weight:700;text-decoration:none;
+  padding:18px 40px;border-radius:14px;
+  background:linear-gradient(135deg,var(--emerald),#008f5a);
+  color:#fff;box-shadow:0 4px 24px rgba(0,168,107,0.2);
+  transition:all 0.3s;letter-spacing:0.04em;
+}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,168,107,0.3)}
+.cta-sub{
+  font-family:'Montserrat',sans-serif;margin-top:14px;font-size:0.6rem;color:var(--muted);
+}
+.cta-sub a{color:var(--champagne);text-decoration:none}
+
+/* ═══ FOOTER ═══ */
+.foot{
+  text-align:center;padding:40px 0 20px;
+  font-family:'Montserrat',sans-serif;font-size:0.45rem;text-transform:uppercase;letter-spacing:0.2em;
+  color:rgba(236,234,221,0.1);
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ VIDEO HERO ═══ -->
+<section class="hero">
+  <video autoplay muted loop playsinline preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 16'%3E%3Crect fill='%23040503' width='9' height='16'/%3E%3C/svg%3E">
+    <source src="hero-portfolio.mp4" type="video/mp4">
+  </video>
+  <div class="hero-content">
+    <div class="hero-badge">📍 MIAMI · SHIPPING NATIONWIDE</div>
+    <h1 class="hero-title">
+      Your event<br><span>deserves better</span><br>than paper.
+    </h1>
+    <p class="hero-sub">
+      Custom invitation sites with <strong>video heroes, live RSVP tracking, and guest management</strong> — built in 24 hours. While everyone else is sending screenshots of paper in group chats, your guests open a link that <strong>feels like the event already started.</strong>
+    </p>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-num">24h</div><div class="hs-label">Delivery</div></div>
+      <div class="hs"><div class="hs-num">ES/EN</div><div class="hs-label">Bilingual</div></div>
+      <div class="hs"><div class="hs-num">$97</div><div class="hs-label">Starting</div></div>
+      <div class="hs"><div class="hs-num">Pay After</div><div class="hs-label">Zero Risk</div></div>
+    </div>
+  </div>
+  <div class="scroll-hint">↓ See examples</div>
+</section>
+
+<div class="wrap">
+
+<!-- ═══ DEMOS ═══ -->
+<div class="sec">
+  <div class="sec-label">Live Examples</div>
+
+  <div class="card card-featured">
+    <div class="card-icon">🌹</div>
+    <div class="card-title">Valeria — Mis Quince</div>
+    <div class="card-desc">Burgundy & rose quinceañera page with cinematic video hero. 18 confirmed guests, 33 total — with a full live RSVP list you can see right now.</div>
+    <div class="card-tags">
+      <span class="tag">Video Hero</span><span class="tag">18 RSVPs</span>
+      <span class="tag">33 Attendees</span><span class="tag">Bilingual</span>
+      <span class="tag">Mobile</span>
+    </div>
+    <div class="card-bottom">
+      <div class="card-price">$97 <span>one-time</span></div>
+      <div>
+        <a href="quince-demo.html" class="btn btn-green">View Demo →</a>
+        <a href="valeria-rsvp.html" class="btn btn-gold">RSVP List (18)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-icon">💍</div>
+    <div class="card-title">Sofia & Marco — Wedding</div>
+    <div class="card-desc">Romantic wedding page with couple's story, venue details, RSVP with meal preferences, plus-one tracking, and registry links. Not a PDF — a website your guests actually enjoy opening.</div>
+    <div class="card-tags">
+      <span class="tag">Video Hero</span><span class="tag">Meal Prefs</span>
+      <span class="tag">Plus-Ones</span><span class="tag">Registry</span>
+      <span class="tag">Hotel Info</span>
+    </div>
+    <div class="card-bottom">
+      <div class="card-price">$150 <span>one-time</span></div>
+      <a href="wedding.html" class="btn btn-gold">View Demo →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-icon">👶</div>
+    <div class="card-title">Baby Martinez — Shower</div>
+    <div class="card-desc">Soft, shareable baby shower page with live gift registry — guests mark what they're bringing so three people don't show up with the same pack of diapers.</div>
+    <div class="card-tags">
+      <span class="tag">Video Hero</span><span class="tag">Live Registry</span>
+      <span class="tag">Photo Wall</span><span class="tag">Messages</span>
+    </div>
+    <div class="card-bottom">
+      <div class="card-price">$97 <span>one-time</span></div>
+      <a href="babyshower.html" class="btn btn-gold">View Demo →</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-icon">🏢</div>
+    <div class="card-title">Tech Summit 2026 — Corporate</div>
+    <div class="card-desc">Professional event page with agenda, speaker bios, custom registration forms, and attendee CSV export. Branded, clean, everything a corporate event needs.</div>
+    <div class="card-tags">
+      <span class="tag">Video Hero</span><span class="tag">Agenda</span>
+      <span class="tag">Speakers</span><span class="tag">CSV Export</span>
+      <span class="tag">Custom Forms</span>
+    </div>
+    <div class="card-bottom">
+      <div class="card-price">$200 <span>one-time</span></div>
+      <a href="corporate.html" class="btn btn-gold">View Demo →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TESTIMONIAL ═══ -->
+<div class="testimonial">
+  <p class="testimonial-quote">"My daughter's quince site had a countdown, RSVP tracking, and everyone talked about it for weeks. Her cousin's quince the month before was a blurry photo of paper in a group chat. Night and day."</p>
+  <p class="testimonial-author">— Veronica R., Quince Mom, Hialeah</p>
+</div>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<div class="sec-label">How It Works</div>
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div>
+      <div class="step-title">You send me the details</div>
+      <div class="step-desc">Event type, date, colors, any photos. 5 minutes via text or email.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div>
+      <div class="step-title">I build your site in 24 hours</div>
+      <div class="step-desc">Custom design. Video hero. Bilingual. RSVP system. Mobile-first. Ready to share anywhere.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div>
+      <div class="step-title">You send one link. Guests RSVP.</div>
+      <div class="step-desc">Text. WhatsApp. Instagram bio. Email. One link works everywhere. You watch the guest list fill up live.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div>
+      <div class="step-title">You pay after it's live</div>
+      <div class="step-desc">Zero risk. If you don't love it, you don't pay. Simple as that.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ GUARANTEE ═══ -->
+<div class="guarantee">
+  <div class="guarantee-icon">🛡️</div>
+  <h3>You Don't Pay Until It's Live</h3>
+  <p>I build the site. You review it. You love it. Then you pay. If anything needs changing, I fix it — still no payment until you're happy. That's how confidence works.</p>
+</div>
+
+<!-- ═══ CTA ═══ -->
+<div class="cta-section">
+  <a href="mailto:dejesusrichard89@gmail.com?subject=I%20want%20my%20event%20site" class="cta-btn">✨ Get Your Event Site</a>
+  <p class="cta-sub">$97–$200 · Pay After It's Live · <a href="mailto:dejesusrichard89@gmail.com">dejesusrichard89@gmail.com</a></p>
+</div>
+
+<div class="foot"><p>Custom Event Sites · Miami · 24-Hour Delivery</p></div>
+
+</div>
+</body>
+</html>
